@@ -29,4 +29,42 @@ if randomValue == nil{
     print(actualValue)
 }*/
 
+struct Toddler{
+    var name: String
+    var monthsOld: Int
+    
+    init?(name: String, monthsOld: Int){
+        if monthsOld < 12 || monthsOld > 36{
+            return nil
+        }
+        else{
+            self.name = name
+            self.monthsOld = monthsOld
+        }
+    }
+}
+
+let toddler = Toddler(name: "peter parker", monthsOld: 15)
+if let myToddler = toddler{
+    print("\(myToddler.name) is \(myToddler.monthsOld) old!")
+}
+else{
+    print("The age your specified for the toddler is not between 1 and 3 years!")
+}
+
+//optional chaining with optionals
+struct Person{
+    var name: String
+    var residence: Residence?
+}
+
+struct Residence{
+    var address: Address?
+}
+
+struct Address{
+    var streetNumber: Int
+    var apartmentName: Int
+    var apartmentNumber: String?
+}
 
